@@ -1,0 +1,3 @@
+Metric,Conservative_Low,Base_Case,Optimistic_High,Unit
+Break-Even CPM (at  Margin),9.589936047113987,12.395563170421442,15.201190293728896,$/1k impressions
+Break-Even Margin (at .00 CPM),8.342078571428571,6.4539221736127095,5.262745775441231,$/conversion

@@ -19,6 +19,7 @@ data/raw/*
 *.csv
 !data/clean/*.csv
 *.xlsx
+!dashboard/*.xlsx
 *.parquet
 
 # SQLite databases (generated via scripts)
