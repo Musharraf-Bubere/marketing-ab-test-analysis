@@ -1,0 +1,5 @@
+daypart,total_users,pct_users,ad_users,ad_conversions,ad_cr_pct,psa_users,psa_conversions,psa_cr_pct,absolute_lift_pct_pts
+1. Late Night (00-05),19837,3.37,19102,257,1.3454,735,1,0.1361,1.2094
+2. Morning (06-11),142253,24.19,136526,2889,2.1161,5727,72,1.2572,0.8589
+3. Afternoon (12-17),257839,43.84,246925,6832,2.7668,10914,220,2.0158,0.7511
+4. Evening (18-23),168172,28.6,162024,4445,2.7434,6148,127,2.0657,0.6777
