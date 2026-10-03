@@ -1,0 +1,44 @@
+# Python & Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Data files (raw datasets must not be committed to GitHub)
+data/raw/*
+!data/raw/.gitkeep
+*.csv
+*.xlsx
+*.parquet
+
+# SQLite databases (generated via scripts)
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables & credentials
+.env
+.env.*
+*.env
+credentials.json
+secrets/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*~
