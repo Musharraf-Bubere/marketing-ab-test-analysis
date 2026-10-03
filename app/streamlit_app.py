@@ -245,7 +245,7 @@ with tab1:
             margin=dict(l=20, r=20, t=30, b=30),
             xaxis=dict(range=[-0.2, 1.2]),
         )
-        st.plotly_chart(fig_ci, use_container_width=True)
+        st.plotly_chart(fig_ci, width="stretch")
 
         st.info(
             f"**Hypothesis Testing Verdict:** Two-proportion Z-score = **7.37**, p-value = **1.71e-13** ($p \\ll 0.001$). "
@@ -276,7 +276,7 @@ with tab1:
                 "Conversion Rate": f"{metrics['cr_psa']:.4%}",
             },
         ])
-        st.dataframe(df_display_groups, use_container_width=True, hide_index=True)
+        st.dataframe(df_display_groups, width="stretch", hide_index=True)
 
         if metrics['p_srm'] > 0.01:
             st.info(
@@ -315,7 +315,7 @@ with tab2:
             title="Conversion Rate: Ad Group vs. PSA Group Across Tiers",
         )
         fig_bar_cr.update_layout(height=340, margin=dict(t=40, b=20, l=20, r=20), legend_title="Group")
-        st.plotly_chart(fig_bar_cr, use_container_width=True)
+        st.plotly_chart(fig_bar_cr, width="stretch")
 
     with col_funnel2:
         st.markdown("##### Impression Productivity: Incremental Orders per 1k Impressions")
@@ -329,7 +329,7 @@ with tab2:
             title="Incremental Conversions per 1,000 Impressions by Exposure Tier",
         )
         fig_prod.update_layout(height=340, margin=dict(t=40, b=20, l=20, r=20), coloraxis_showscale=False)
-        st.plotly_chart(fig_prod, use_container_width=True)
+        st.plotly_chart(fig_prod, width="stretch")
         st.caption(
             "ℹ️ **Note on Low Tiers:** Negative productivity values in the 1–5 and 6–10 tiers reflect small control group sample sizes "
             "and statistical noise, not evidence that the ad hurts conversion."
@@ -349,7 +349,7 @@ with tab2:
         title=f"Heavy Exposure Tiers (51+): {heavy_u_pct:.1f}% of Users Consume {heavy_i_pct:.1f}% of Impressions",
     )
     fig_conc.update_layout(height=280, margin=dict(t=40, b=20, l=20, r=20), legend_title="Metric")
-    st.plotly_chart(fig_conc, use_container_width=True)
+    st.plotly_chart(fig_conc, width="stretch")
 
     st.markdown("---")
     st.subheader("2. Temporal Segmentation (Day of Week & Daypart)")
@@ -374,7 +374,7 @@ with tab2:
             title="Day-of-Week Conversion Lift",
         )
         fig_day.update_layout(height=340, margin=dict(t=40, b=20, l=20, r=20), legend_title="Bonferroni Status")
-        st.plotly_chart(fig_day, use_container_width=True)
+        st.plotly_chart(fig_day, width="stretch")
 
     with col_daypart:
         st.markdown("##### Daypart Performance & Small Base Flag")
@@ -405,7 +405,7 @@ with tab2:
         })
 
         cols_dp_show = ["Daypart", "Total Users", "Ad Group CR (%)", "PSA Group CR (%)", "Absolute Lift (% pts)", "Control Reliability"]
-        st.dataframe(df_dp_display[cols_dp_show], use_container_width=True, hide_index=True)
+        st.dataframe(df_dp_display[cols_dp_show], width="stretch", hide_index=True)
 
 # -------------------------------------------------------------
 # TAB 3: BUSINESS IMPACT & DECISION MODEL
@@ -499,7 +499,7 @@ with tab3:
             height=320,
             margin=dict(t=20, b=20, l=20, r=20),
         )
-        st.plotly_chart(fig_heat, use_container_width=True)
+        st.plotly_chart(fig_heat, width="stretch")
 
     st.markdown("---")
     st.subheader("Scenario Comparison: Uncapped vs. 100-Ad Frequency Cap")
@@ -560,7 +560,7 @@ with tab3:
             "Profit Delta vs. A": f"${fin_cap_50['net_incremental_profit'] - fin_base['net_incremental_profit']:+,.0f}",
         },
     ])
-    st.dataframe(df_scen_comp, use_container_width=True, hide_index=True)
+    st.dataframe(df_scen_comp, width="stretch", hide_index=True)
 
     breakeven_loss_orders = spend_saved / margin_slider if margin_slider > 0 else 0.0
     st.info(
