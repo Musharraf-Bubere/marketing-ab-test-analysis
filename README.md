@@ -24,23 +24,35 @@ This project moves beyond academic statistical testing to provide decision-maker
 ```text
 marketing-ab-test-analysis/
 │
+├── app/                     # Interactive Streamlit Web Application (Live Demo)
+│   ├── streamlit_app.py     # Main 3-tab dashboard application
+│   └── calculations.py      # Dynamic calculations & metric derivation module
+│
 ├── data/
 │   ├── raw/                 # Original dataset (excluded from git tracking)
-│   ├── clean/               # Processed/aggregated data exports for BI tools
-│   └── marketing_ab.db      # Local SQLite database (generated via ETL script)
+│   ├── clean/               # Aggregated clean CSV exports powering app & BI tools
+│   └── marketing_ab.db      # Local SQLite database (generated via ETL pipeline)
 │
 ├── sql/                     # Analytical SQL queries (conversion, timing, exposure)
 ├── notebooks/               # Jupyter notebooks for statistical modeling & EDA
-├── dashboard/               # Power BI / Tableau dashboard files & specifications
-├── docs/                    # Data dictionary, methodology notes, and artifacts
-│   └── data_dictionary.md   # Full schema & metric definitions
+├── dashboard/               # Financial model & dashboard documentation
+│   ├── business_impact_model.xlsx      # Interactive Excel sensitivity model
+│   └── README.md            # Dashboard documentation & metrics dictionary
 │
-├── scripts/                 # Reusable Python scripts (ETL, pipeline)
-│   └── load_to_sqlite.py    # Automated SQLite ingestion pipeline
+├── docs/                    # Research reports, data dictionary, methodology
+│   ├── data_validation_report.md
+│   ├── statistical_testing_report.md
+│   ├── segment_funnel_report.md
+│   ├── business_impact_report.md
+│   └── powerbi_dashboard_specification.md
+│
+├── scripts/                 # Reusable Python scripts (ETL, validation, models)
+├── tests/                   # Automated pytest suite verifying all numerical benchmarks
+│   └── test_numbers.py      # Regression tests ensuring zero metric discrepancies
 │
 ├── .gitignore               # Excludes raw data, virtual environments, cache
 ├── README.md                # Project documentation and summary
-└── requirements.txt         # Python project dependencies
+└── requirements.txt         # Pinned Python project dependencies
 ```
 
 ---
@@ -55,11 +67,28 @@ marketing-ab-test-analysis/
 
 ---
 
+## 🌐 Interactive Streamlit Dashboard
+
+A live, interactive web dashboard companion to the Power BI specification is available to test commercial assumptions, explore exposure thresholds, and audit experimental integrity.
+
+- **Live Cloud App**: `[Deployed Link: Add your Streamlit Cloud URL here]`
+- **Local Run**:
+  ```bash
+  streamlit run app/streamlit_app.py
+  ```
+
+### Dashboard Tabs:
+1. **Experiment Overview**: Executive KPI cards, conversion rate comparison with 95% confidence intervals, and a dynamic Sample Ratio Mismatch (SRM) $\chi^2$ check.
+2. **Segments & Funnel Dynamics**: Exposure saturation curves (diminishing returns at 100+ ads), daily conversion lifts with Bonferroni-corrected significance, and hourly diurnal patterns.
+3. **Financial Impact & What-If**: Live sensitivity analysis across CPM and Gross Margin sliders, break-even threshold calculators, and dynamic Scenario A vs. Scenario B (100-ad frequency cap) risk-return modeling.
+
+---
+
 ## 🚀 Quickstart & Reproduction
 
 ### 1. Clone & Set Up Environment
 ```bash
-git clone <remote-url>
+git clone https://github.com/Musharraf-Bubere/marketing-ab-test-analysis.git
 cd marketing-ab-test-analysis
 
 # Create and activate virtual environment
@@ -69,11 +98,17 @@ python -m venv .venv
 # Unix/macOS:
 source .venv/bin/activate
 
-# Install dependencies
+# Install pinned dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Ingest Dataset into SQLite
+### 2. Verify Numerical Integrity
+Run the automated test suite to verify that all statistical metrics and dynamic derivations match verified benchmarks:
+```bash
+pytest tests/test_numbers.py -v
+```
+
+### 3. Ingest Dataset into SQLite (Optional / Full Pipeline)
 Place `marketing_AB.csv` into `data/raw/` and run the automated ETL script:
 ```bash
 python scripts/load_to_sqlite.py
@@ -84,10 +119,11 @@ This builds the SQLite database `data/marketing_ab.db` with indexed tables and c
 
 ## 🛠 Project Roadmap & Phases
 - [x] **Phase 1: Setup, Repository Scaffolding & SQLite Ingestion**
-- [ ] **Phase 2: Data Validation & Experiment Integrity (SRM & Outlier Audit)**
-- [ ] **Phase 3: SQL Exploratory & Conversion Analysis**
-- [ ] **Phase 4: Statistical Testing & Power Analysis (Hypothesis Testing)**
-- [ ] **Phase 5: Customer Segmentation & Exposure Funnel Analysis**
-- [ ] **Phase 6: Commercial ROI & Sensitivity Financial Model**
-- [ ] **Phase 7: Interactive Executive Dashboard (Power BI)**
+- [x] **Phase 2: Data Validation & Experiment Integrity (SRM & Outlier Audit)**
+- [x] **Phase 3: SQL Exploratory & Conversion Analysis**
+- [x] **Phase 4: Statistical Testing & Power Analysis (Hypothesis Testing)**
+- [x] **Phase 5: Customer Segmentation & Exposure Funnel Analysis**
+- [x] **Phase 6: Commercial ROI & Sensitivity Financial Model**
+- [x] **Phase 7A: Power BI Specification & DAX Data Model (Design Blueprint)**
+- [x] **Phase 7B: Interactive Streamlit Web Application (Live Functional Demo)**
 - [ ] **Phase 8: Project Synthesis, Resume Bullets & Final Polish**
