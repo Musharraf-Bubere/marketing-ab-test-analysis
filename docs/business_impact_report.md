@@ -84,7 +84,7 @@ Because users still receive 100 impressions, assuming 25% or 50% conversion loss
 
 | Strategy Scenario | Total Impressions | Media Spend (@ $2 CPM) | Spend Saved vs Uncapped | Incremental Orders | Incremental Gross Profit (@ $40 Margin) | Net Incremental Profit | Margin-based ROAS | Strategic Assessment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Scenario A: Full Uncapped Rollout** | 14,014,692 | $28,029 | Baseline ($0) | **4,343** | $173,720 | **+$145,691** | **6.20×** | Standard baseline; high profit, zero conversion risk |
+| **Scenario A: Full Uncapped Rollout** | 14,014,692 | $28,029 | Baseline ($0) | **4,343** | $173,720 | **+$145,691** | **6.20×** | Standard baseline; high profit, without risking conversion leakage |
 | **Scenario B1: 100-Ad Cap (100% Retention)** | 12,162,018 | $24,324 | +$3,705 | **4,343** | $173,720 | **+$149,396** | **7.14×** | Best-case cap; saves $3.7k with zero order loss (+2.5% profit gain) |
 | **Scenario B2: 100-Ad Cap (75% Retention)** | 12,162,018 | $24,324 | +$3,705 | **4,053** (-290 orders) | $162,120 (-$11.6k) | **+$137,796** | **6.67×** | **Net profit decreases by $7,895** because lost margin ($11.6k) > spend saved ($3.7k) |
 | **Scenario B3: 100-Ad Cap (50% Retention)** | 12,162,018 | $24,324 | +$3,705 | **3,763** (-580 orders) | $150,520 (-$23.2k) | **+$126,196** | **6.19×** | **Net profit decreases by $19,495** due to severe conversion leakage |
@@ -113,6 +113,6 @@ Because users still receive 100 impressions, assuming 25% or 50% conversion loss
 
 | Decision Path | Conditions & Criteria | Expected Commercial Outcome |
 | :--- | :--- | :--- |
-| **1. Launch Fully (Uncapped) [PRIMARY]** | • Margin $\ge \$40$, CPM $\le \$3.00$.<br>• Holdout testing for frequency cap is set up as Phase 2. | **Immediate deployment**: Captures full +$145.7k net incremental profit (6.20× margin-based return) with zero risk of conversion leakage. |
+| **1. Launch Fully (Uncapped) [PRIMARY]** | • Margin $\ge \$40$, CPM $\le \$3.00$.<br>• Holdout testing for frequency cap is set up as Phase 2. | **Immediate deployment**: Captures full +$145.7k net incremental profit (6.20× margin-based return) without risking conversion leakage. |
 | **2. Test 100-Ad Cap via Holdout Group** | • Ad platform supports randomized holdout groups.<br>• Measure whether incremental orders in 100+ tier remain above 92%. | Isolates potential +$3.7k media savings while safeguarding customer orders. |
 | **3. Do Not Launch** | • CPM exceeds **$9.59** (conservative break-even).<br>• Gross margin per conversion falls below **$8.34**.<br>• Production holdout test reveals lift disappears at scale. | Halt campaign rollout; ad delivery costs exceed customer lifetime value. |

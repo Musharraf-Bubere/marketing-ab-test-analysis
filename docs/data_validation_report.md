@@ -9,7 +9,7 @@ All **588,101** records in the Marketing A/B Test dataset were evaluated across 
 | :--- | :--- | :--- | :--- |
 | **1. Completeness** | Missing / Null Values | 0 missing values across all 7 columns | **PASS** |
 | **2. Uniqueness** | Duplicate User IDs | 0 duplicates (588,101 unique users) | **PASS** |
-| **3. Allocation** | Sample Ratio Mismatch (SRM) | $\chi^2 = 0.0000$, $p = 0.9998$ (vs 96:4 split) | **PASS** |
+| **3. Allocation** | Sample Ratio Mismatch (SRM) | $\chi^2 = 0.0000$, $p = 0.9998$ (vs 96:4 split) | **Consistent with assumed 96:4 design** |
 | **4. Consistency** | Ad Exposure Outliers | 52,057 outliers ($> 61.5$ ads, max 2,065) | **FLAGGED (Confound)** |
 
 ---
@@ -44,7 +44,7 @@ All **588,101** records in the Marketing A/B Test dataset were evaluated across 
 - **Why This Matters to the Business**:
   - **What is SRM?** Sample Ratio Mismatch occurs when the proportion of users assigned to treatment versus control deviates from the experiment's engineered configuration. If an experiment is designed to split traffic 50:50, but ends up 55:45 ($p < 0.001$), it indicates that certain users (e.g., mobile users, specific browsers, or high-intent shoppers) were systematically dropped, redirected, or crashed upon entering one variant. An SRM completely invalidates causal inference.
   - **Why a 96% / 4% split instead of 50% / 50%?** In commercial marketing, serving a Public Service Announcement (PSA) generates zero direct commercial revenue. Diverting 50% of 588,000 visitors to a non-revenue placebo ad would incur an immense opportunity cost. By allocating 4% to the control group, the business secured **23,524 control visitors**—more than enough statistical power to detect minute differences—while maintaining 96% commercial monetization.
-  - **The SRM Verdict**: With $p = 0.9998$, there is zero evidence of traffic misdirection. The allocation perfectly adhered to the 96:4 specification.
+  - **The SRM Audit**: Assuming an intended 96:4 allocation ratio, the observed traffic matches this target closely ($\chi^2 = 0.0000$, $p = 0.9998$). This demonstrates consistency with the assumed ratio, though it cannot independently prove that user assignment was properly randomized.
 
 ---
 

@@ -6,8 +6,8 @@ Evaluates:
 1. Ad-exposure funnel progression, impression concentration & non-randomization caveat.
 2. Diminishing returns & marginal productivity (incremental conversions per 1,000 impressions).
 3. Temporal breakdown by Day of Week and Daypart (Overnight, Morning, Afternoon, Evening).
-4. Identification of wasted spend segments and frequency cap modeling.
-Exports clean summary tables to data/clean/ for Power BI.
+4. Identification of low-efficiency exposure tiers and frequency cap modeling.
+Exports clean summary tables to data/clean/ for BI tools and Streamlit.
 """
 
 import os

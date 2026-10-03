@@ -1,8 +1,11 @@
 # Power BI Dashboard Specification & DAX Reference Guide
 
+> [!NOTE] Design Specification Only
+> This document represents an architectural specification and DAX reference blueprint for implementation in Power BI Desktop. The interactive dashboard for this project is deployed as a live Streamlit web application at `https://marketing-ab-test-analysis.streamlit.app/`. All financial figures referenced are hypothetical planning assumptions.
+
 ## 1. Architecture & Data Model Overview
 
-The Power BI dashboard is designed for executive presentation, delivering high visual clarity, rigorous statistical backing, and dynamic commercial impact modeling across **3 dedicated pages**:
+The Power BI design specification delivers high visual clarity, statistical backing, and commercial impact modeling across **3 dedicated pages**:
 
 ```text
 Power BI Data Model (Import Mode from /data/clean/)
@@ -40,8 +43,8 @@ Present high-level executive KPIs, baseline conversion rates, lift metrics, and 
 +---------------------------------------------------------------------------------------------------+
 |  [ TABLE 1: Executive Cohort Summary Table ]                                                      |
 |  Cohort | Users | Conversions | CR (%) | Absolute Lift | Relative Lift | SRM Status               |
-|  Ad     | 564.6k| 14,423      | 2.55%  | +0.77% pts    | +43.09%       | PASSED (p = 0.9998)      |
-|  PSA    | 23.5k | 420         | 1.79%  | Baseline      | Baseline      | PASSED                   |
+|  Ad     | 564.6k| 14,423      | 2.55%  | +0.77% pts    | +43.09%       | Consistent (p = 0.9998)  |
+|  PSA    | 23.5k | 420         | 1.79%  | Baseline      | Baseline      | Consistent               |
 +---------------------------------------------------------------------------------------------------+
 ```
 

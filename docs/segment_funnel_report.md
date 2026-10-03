@@ -3,9 +3,9 @@
 ## 1. Executive Summary
 While Phase 4 established that the commercial ad campaign achieved an aggregate conversion lift of $+0.77$ percentage points ($p < 10^{-12}$), an aggregate analysis hides critical behavioral nuances:
 - **Where the campaign works best**: Midweek days (**Tuesday** with $+110.7\%$ relative lift and **Monday** with $+47.4\%$ relative lift), **Afternoon/Evening dayparts** (12:00–23:00), and users exposed to **21–100 impressions**.
-- **Where the campaign wastes spend**:
-  1. **Low-exposure users (1–10 ads)**: Constitute **44.4% of all users**, but experience zero causal lift over the PSA placebo.
-  2. **Hyper-exposed users (100+ ads)**: Only **3.9% of users**, yet consume **29.0% of all ad impressions** (averaging 184 ads/user). While conversion is high (17.1%), the control group already converts at 11.9% organically, indicating severe diminishing returns and wasted budget on already-committed buyers.
+- **Where efficiency is lower or inconclusive**:
+  1. **Low-exposure users (1–10 ads)**: Constitute **44.4% of all users**, but experience zero detectable causal lift over the PSA placebo.
+  2. **Hyper-exposed users (100+ ads)**: Only **3.9% of users**, yet consume **29.0% of all ad impressions** (averaging 184 ads/user). While conversion is high (17.1%), the control group already converts at 11.9% organically, indicating severe diminishing marginal returns on highly engaged visitors.
   3. **Thursday traffic**: Accounts for ~83k users but delivers only $+0.14$ percentage points in lift ($p = 0.555$, statistically indistinguishable from zero).
 
 ---
@@ -27,7 +27,7 @@ While Phase 4 established that the commercial ad campaign achieved an aggregate 
 
 ---
 
-### Core Funnel Insights & The "Budget Bleed" Trap
+### Core Funnel Insights & The Budget Concentration Trap
 
 #### 1. Incremental Conversions per 1,000 Impressions (The Productivity Metric)
 * **Peak Impression Productivity (51–100 ads)**: The 51–100 bucket generates **0.844 incremental conversions per 1,000 ad impressions served**.
@@ -44,7 +44,7 @@ While Phase 4 established that the commercial ad campaign achieved an aggregate 
 
 | Daypart (Hours) | User Volume | Share of Traffic | Treatment CR (`ad`) | Control CR (`psa`) | Absolute Lift | Relative Lift | Operational Strategy |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Late Night (00–05)** | 19,836 | 3.37% | 1.3454% | 0.1361% | +1.2094% pts | *(Small base artifact)* | Unreliable lift (only 1 control conversion out of 734 users) |
+| **Late Night (00–05)** | 19,836 | 3.37% | 1.3454% | 0.1361% | +1.2094% pts | *(Small base artifact)* | Unreliable lift (only 1 control conversion out of 735 users) |
 | **Morning (06–11)** | 142,284 | 24.19% | 2.1161% | 1.2572% | +0.8589% pts | +68.32% | Ramp-up period; strong relative response |
 | **Afternoon (12–17)** | 257,837 | **43.84%** | **2.7668%** | **2.0158%** | **+0.7511% pts** | **+37.26%** | **Core conversion engine (Highest volume)** |
 | **Evening (18–23)** | 168,144 | **28.60%** | **2.7434%** | **2.0657%** | **+0.6777% pts** | **+32.81%** | **Peak conversion window (Prime time)** |
@@ -52,15 +52,15 @@ While Phase 4 established that the commercial ad campaign achieved an aggregate 
 ### Weekly Daypart Synergy
 * **Prime Time**: The afternoon and evening windows (12:00 to 23:00) account for **72.44% of total traffic** and deliver conversion rates exceeding **2.74%**.
 * **Best Day-Daypart Combo**: Monday and Tuesday afternoons/evenings achieve conversion rates between **3.0% and 3.8%**, representing the campaign's highest return-on-ad-spend (ROAS) sweet spot.
-* **Wasted Day**: Thursday has the lowest absolute lift (+0.14% pts) and was proven non-significant in Phase 4 ($p = 0.555$). Reallocating Thursday ad spend to Tuesday and Monday represents an immediate, data-backed optimization.
+* **Inconclusive Day**: Thursday has the lowest absolute lift (+0.14% pts) and is not statistically significant after Bonferroni correction ($p = 0.555$). Slicing daily traffic shrinks the control group (~3.4k users), so absence of significance does not prove zero effect. Rather than cutting Thursday spend immediately, test a bid reduction via a randomized holdout.
 
 ---
 
 ## 4. Operational Recommendations for Marketing Leadership
 
-1. **Implement an Ad Frequency Cap (Cap at 50 Impressions)**:
-   * By capping user exposure at **50 impressions per campaign cycle**, the company would eliminate unnecessary impressions in Bucket 06 (100+ ads) and conserve up to **20–25% of total media spend** with negligible impact on incremental sales.
+1. **Implement an Ad Frequency Cap (Cap at 50–100 Impressions)**:
+   * Evaluate a frequency cap on hyper-exposed visitors via a holdout group test to avoid delivering impressions beyond the point of diminishing marginal returns.
 2. **Day-of-Week Daypart Reallocation**:
-   * Cut display bidding on **Thursday**, reallocating budget to **Monday and Tuesday** between **12:00 and 22:00**.
+   * Prioritize display bidding on **Monday and Tuesday** between **12:00 and 22:00**, while testing lower bids on **Thursday** via a randomized holdout.
 3. **Re-targeting Filter for Low-Engagement Visitors**:
    * For users who bounce after 1–5 ads, evaluate whether high-cost retargeting bids should be ceased unless they demonstrate deeper on-site browsing behavior.

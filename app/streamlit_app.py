@@ -216,7 +216,7 @@ with tab1:
     with col_chart:
         st.markdown("#### Statistical Significance & 95% Confidence Interval")
         st.caption(
-            "The 95% Confidence Interval represents a **plausible range under test conditions, not a deterministic guarantee**."
+            "The 95% Confidence Interval represents a **plausible range of the true effect under test conditions, rather than a deterministic certainty**."
         )
 
         # Plotly Forest Plot for Absolute Lift

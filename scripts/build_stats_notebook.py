@@ -216,7 +216,7 @@ df_days[['most_ads_day', 'ad_cr_pct', 'psa_cr_pct', 'absolute_lift_pct_pts', 're
 
 ### Key Findings
 1. **Unquestionable Statistical Significance**: With $Z = 7.37$ and $p = 1.71 \times 10^{-13}$, the commercial ad reliably lifts conversions over the PSA control. Under $H_0$, observing this lift by random variation alone has a probability under 1 in 5 trillion.
-2. **Plausible Effect Boundary**: The 95% Confidence Interval for absolute lift is **[+0.60% pts, +0.94% pts]** (+33.3% to +52.8% relative lift). This establishes a plausible range for the true effect under test conditions, with +0.60% pts serving as a conservative planning floor (not a guarantee).
+2. **Plausible Effect Boundary**: The 95% Confidence Interval for absolute lift is **[+0.60% pts, +0.94% pts]** (+33.3% to +52.8% relative lift). This establishes a plausible range for the true effect under test conditions, with +0.60% pts serving as a conservative planning floor (rather than an absolute assurance).
 3. **Statistical vs Commercial Significance**: Cohen's $h = 0.053$ is categorized as a 'small' standardized effect size, yet yields 4,343 incremental conversions. However, commercial viability depends on unit economics (cost per impression vs revenue per conversion), evaluated in Phase 6.
 4. **Timing Nuance & Multiple Testing**: Monday, Tuesday, and Wednesday drive the bulk of statistically validated lift. Thursday shows no detectable difference from the control ($p = 0.555$). Non-significant results on smaller daily control groups may reflect lower local power rather than true absence of effect.
 

@@ -23,7 +23,7 @@ Uncover granular behavioral patterns to answer:
 1. **Ad-Exposure Funnel & Productivity**: At what exposure level does the ad campaign maximize lift, and where does it over-saturate?
 2. **Impression Productivity**: How many incremental conversions are generated per 1,000 ad impressions across buckets?
 3. **Budget Concentration Trap**: How many impressions are swallowed by hyper-exposed users vs causal conversion output?
-4. **Temporal Dynamics**: Which days of the week and dayparts drive peak ROI versus wasted ad spend?
+4. **Temporal Dynamics**: Which days of the week and dayparts drive peak conversion lift versus flat or non-significant response?
 
 > **Important Methodological Note:** Ad exposure levels (`total_ads`) were **not randomly assigned**. Exposure is an observational outcome of browsing duration. Comparing Treatment vs Control within each bucket helps control for engagement, but these tiers represent post-hoc behavioral segments rather than randomized treatment arms.
 """))

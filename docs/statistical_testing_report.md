@@ -1,7 +1,7 @@
 # Phase 4: Statistical Hypothesis Testing & Power Analysis Report
 
 ## 1. Executive Summary of Results
-A rigorous two-proportion hypothesis test was performed to determine whether the commercial advertisement (`ad`) produced a statistically significant lift in conversion rate over the Public Service Announcement baseline (`psa`).
+A pooled two-proportion hypothesis test and unpooled Wald 95% Confidence Interval were evaluated to determine whether the commercial advertisement (`ad`) produced a statistically significant lift in conversion rate over the Public Service Announcement baseline (`psa`).
 
 | Metric | Treatment (`ad`) | Control (`psa`) | Difference / Lift | Statistical Test Metric | Statistical Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ A rigorous two-proportion hypothesis test was performed to determine whether the
 
 #### 2. What does the 95% Confidence Interval ($[+0.60\%\text{ pts}, +0.94\%\text{ pts}]$) mean?
 * **Precise Definition**: If this experiment were replicated repeatedly under identical conditions and independent samples, 95% of the calculated confidence intervals would contain the true population lift.
-* **Business Translation**: It establishes a plausible range for the true effect rather than a point estimate. While not a deterministic guarantee of future performance (which depends on stable market and seasonal conditions), $+0.60$ percentage points represents a conservative lower boundary for planning.
+* **Business Translation**: It establishes a plausible range for the true effect rather than a point estimate. While not an assurance of future performance (which depends on stable market and seasonal conditions), $+0.60$ percentage points represents a conservative lower boundary for planning.
 
 #### 3. Statistical Significance vs. Practical (Economic) Significance
 * **The Distinction**: Cohen's $h = 0.0530$ is categorized as a "small" effect size by textbook benchmarks.
@@ -42,7 +42,7 @@ A rigorous two-proportion hypothesis test was performed to determine whether the
 
 #### 4. Statistical Power & The Post-Hoc Power Caveat
 * **Sample Size Capacity**: With over 588,000 total observations, the test had extraordinary prospective power to detect minute differences.
-* **Methodological Caution**: Post-hoc (retrospective) power calculated from observed effect sizes is mathematically tethered to the $p$-value and does not mean "zero risk of error." However, the massive sample size ensures that this test was not underpowered.
+* **Methodological Caution**: Post-hoc (retrospective) power calculated from observed effect sizes is mathematically tethered to the $p$-value and does not imply an absence of statistical uncertainty. However, the massive sample size ensures that this test was not underpowered.
 
 ---
 
@@ -61,7 +61,7 @@ To prevent false discoveries, we applied the **Bonferroni correction** (adjusted
 | **Saturday** | 2.1307% | 1.3996% | +0.7311% pts | +52.24% | 2.6745 | $7.48 \times 10^{-3}$ | Borderline ($p = 0.052$ adj.) | Moderate lift, monitor |
 | **Friday** | 2.2465% | 1.6303% | +0.6162% pts | +37.80% | 2.5250 | $1.16 \times 10^{-2}$ | NO ($p > 0.0071$) | High spend, modest lift |
 | **Sunday** | 2.4620% | 2.0595% | +0.4025% pts | +19.54% | 1.4146 | $1.57 \times 10^{-1}$ | NO ($p = 0.157$) | Lift not distinct from noise |
-| **Thursday** | 2.1637% | 2.0230% | +0.1407% pts | +6.96% | 0.5907 | $5.55 \times 10^{-1}$ | NO ($p = 0.555$) | **Candidate for Budget Reduction** |
+| **Thursday** | 2.1637% | 2.0230% | +0.1407% pts | +6.96% | 0.5907 | $5.55 \times 10^{-1}$ | NO ($p = 0.555$) | Inconclusive lift; test via holdout |
 
 ---
 

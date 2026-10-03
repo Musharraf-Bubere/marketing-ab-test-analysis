@@ -72,7 +72,7 @@ Missing values in ad tracking often signify client-side tracking failures (e.g.,
 print("Missing values per column:")
 print(null_counts)
 assert null_counts.sum() == 0, "Error: Unexpected missing values found!"
-print("\\n-> Check 1 Status: PASSED (100% data completeness)")
+print("\\n-> Check 1 Status: VERIFIED (100% data completeness)")
 """))
 
     # Check 2: Duplicates
@@ -89,7 +89,7 @@ print(f"Unique User IDs:       {unique_users:,}")
 print(f"Duplicate Identifiers: {duplicate_count:,}")
 
 assert duplicate_count == 0, "Error: Duplicate user IDs detected!"
-print("\\n-> Check 2 Status: PASSED (Each row represents a distinct, unique user)")
+print("\\n-> Check 2 Status: VERIFIED (Each row represents a distinct, unique user)")
 """))
 
     # Check 3: SRM
@@ -118,9 +118,9 @@ print(f"\\nChi-Square Statistic: {chi2_stat:.6f}")
 print(f"p-value:              {p_val:.6f}")
 
 if p_val > 0.01:
-    print("-> Check 3 Status: PASSED (No SRM detected against 96:4 design; p > 0.01)")
+    print("-> Check 3 Status: CONSISTENT (Matches assumed 96:4 design; p > 0.01)")
 else:
-    print("-> Check 3 Status: FAILED (Sample Ratio Mismatch detected)")
+    print("-> Check 3 Status: DEVIATION DETECTED (Significant discrepancy from 96:4)")
 """))
 
     # Check 4: Outliers & Distribution
@@ -186,7 +186,7 @@ plt.show()
     # Conclusion
     cells.append(nbf.v4.new_markdown_cell("""## 6. Audit Conclusion & Next Steps
 - **Data Hygiene**: The dataset is complete, uncorrupted, and has 0 duplicates or missing values.
-- **Experiment Validity**: The sample passed the Chi-Square SRM test ($p = 0.9998$), confirming random assignment integrity.
+- **Sample Allocation Audit**: The sample matches the assumed 96:4 ratio under a Chi-Square test ($p = 0.9998$), consistent with the assumed design ratio (though not proving proper randomization).
 - **Analytical Caution**: Because higher ad exposure strongly correlates with higher conversion rate (1.33% vs 14.85%), subsequent phases will segment exposure into discrete buckets to analyze true marginal lift and avoid confusing user engagement with advertising causation.
 
 **Status:** Ready to proceed to **Phase 3: SQL Exploratory Analysis**.

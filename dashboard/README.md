@@ -1,11 +1,17 @@
-# Executive Power BI Dashboard Guide
+# Dashboard Architecture & Power BI Specification Guide
 
-This directory contains the supporting documentation, financial models, and specifications for the 3-page interactive Power BI dashboard: **"Marketing Campaign A/B Test and Conversion Funnel Analysis"**.
+This directory contains the supporting documentation, financial models, and implementation specifications for the Power BI design specification companion: **"Marketing Campaign A/B Test and Conversion Funnel Analysis"**.
+
+> [!NOTE] Live Functional Dashboard
+> The live interactive dashboard for this project is deployed as a Streamlit web application at:
+> **https://marketing-ab-test-analysis.streamlit.app/**
+> 
+> The documentation in this directory and [`../docs/powerbi_dashboard_specification.md`](../docs/powerbi_dashboard_specification.md) provides the data model architecture and DAX specification to implement the dashboard in Power BI Desktop if desired.
 
 ---
 
 ## 📂 Directory Contents
-* **[`business_impact_model.xlsx`](business_impact_model.xlsx)**: Complete dynamic Excel financial model featuring 5 tabs (Inputs, Executive Summary, 2D Sensitivity Matrix, Scenario Comparison, and Timing Hypothesis) with live formulas and cached evaluated results.
+* **[`business_impact_model.xlsx`](business_impact_model.xlsx)**: Complete dynamic Excel financial model featuring 5 tabs (Inputs, Executive Summary, 2D Sensitivity Matrix, Scenario Comparison, and Timing Hypothesis) with live formulas and hypothetical assumptions.
 * **[`../docs/powerbi_dashboard_specification.md`](../docs/powerbi_dashboard_specification.md)**: Full technical implementation guide containing wireframes, layout coordinates, visual styling rules, and exact copy-paste DAX formulas for every measure.
 
 ---
