@@ -17,6 +17,7 @@ __pycache__/
 data/raw/*
 !data/raw/.gitkeep
 *.csv
+!data/clean/*.csv
 *.xlsx
 *.parquet
 

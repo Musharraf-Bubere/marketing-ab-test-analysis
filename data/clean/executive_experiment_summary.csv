@@ -1,0 +1,2 @@
+treatment_users,control_users,total_users,treatment_share_pct,treatment_conversions,control_conversions,treatment_cr_pct,control_cr_pct,absolute_lift_pct_pts,relative_lift_pct,avg_ads_treatment,avg_ads_control,expected_baseline_conversions,incremental_conversions
+564577,23524,588101,96.0,14423,420,2.5547,1.7854,0.7692,43.09,24.82,24.76,10080.0,4343.0

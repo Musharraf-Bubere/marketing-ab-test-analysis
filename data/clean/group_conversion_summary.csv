@@ -1,0 +1,3 @@
+cohort,users,conversions,conversion_rate_pct,avg_ads_seen,absolute_lift_pct_pts,relative_lift_pct
+Treatment (ad),564577,14423,2.5547,24.82,0.7693,43.09
+Control (psa),23524,420,1.7854,24.76,0.0,0.0
